@@ -9,6 +9,12 @@ contract A {
     }
 }
 
-contract B is A {
+contract B is A("Fixed Input") {}
+
+contract C is A {
+    constructor() A("Another way to hard code input") {}
+}
+
+contract D is A {
     constructor(string memory _name) A(_name) {}
 }
